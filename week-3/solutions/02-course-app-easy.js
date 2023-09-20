@@ -34,7 +34,7 @@ const userAuthentication = (req, res, next) => {
 };
 
 app.post("/admin/signup", (req, res) => {
-  const admin = req.body; //admin = {username: "saurabh.rgt@gmail.com, password: "123456"}
+  const admin = req.body;
   const existingAdmin = ADMINS.find((a) => a.username === admin.username);
   if (existingAdmin) {
     res.status(403).json({ message: "Admin already exists" });
